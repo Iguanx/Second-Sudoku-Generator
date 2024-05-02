@@ -2,6 +2,7 @@
 #define PUZZLE_H
 
 #include <iostream>
+#include <random>
 using namespace std;
 
 enum{
@@ -19,6 +20,7 @@ class Puzzle{
         */
     public:
         Puzzle(){
+            srand(time(NULL));
             for(int i = 0; i < boardSize; i++){
                 for(int j = 0; j < boardSize; j++){
                     board[i*9 + j] = 0;
@@ -46,6 +48,18 @@ class Puzzle{
         bool checkCol();
         bool checkBox();
         bool checkAll();
+
+        void insertRandom(){
+            int row = rand() % 9; //0 - 8
+            int col = rand() % 9;
+
+            int numToInsert = rand() % 9 + 1;
+
+            board[row * 9 + col] = numToInsert;
+
+            
+        }
+
 
 
         

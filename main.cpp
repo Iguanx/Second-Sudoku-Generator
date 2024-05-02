@@ -4,6 +4,9 @@ using namespace std;
 
 int main(){
     Puzzle main;
+    for(int i = 0; i < 5; i ++){
+        main.insertRandom();
+    }
     main.PrintPuzzle();
 }
 
